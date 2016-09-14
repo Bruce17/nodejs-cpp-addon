@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-cpp-addon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:benchmark": "matcha",
+    "pretest:benchmark": "npm run nodegyp:build",
+    "install:globals": "npm install node-gyp@latest -g",
+    "build": "npm run nodegyp:clean && npm run nodegyp:configure && npm run nodegyp:build",
+    "nodegyp:clean": "node-gyp clean",
+    "nodegyp:configure": "node-gyp configure",
+    "nodegyp:build": "node-gyp build --jobs 2"
+  },
+  "author": "Michael Raith <Bruce17@users.noreply.github.com>",
+  "engines": {
+    "node": "^4.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bruce17/nodejs-cpp-addon.git"
+  },
+  "keywords": [
+    "nodejs",
+    "addon",
+    "cpp",
+    "c++"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bruce17/nodejs-cpp-addon/issues"
+  },
+  "homepage": "https://github.com/Bruce17/nodejs-cpp-addon#readme",
+  "devDependencies": {
+    "matcha": "^0.7.0"
+  },
+  "dependencies": {}
+}
